@@ -1,0 +1,21 @@
+<div class="root">
+    <div class="p-12">
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+            <div fxLayout="row" fxLayoutAlign="start center">
+                <button mat-icon-button (click)="close()">
+                    <mat-icon>close</mat-icon>
+                </button>
+                <p>dummy-sb-2 works!</p>
+            </div>
+            <button mat-raised-button color="primary" class="mr-64"> Save
+                <mat-icon><mat-spinner color="accent" diameter="20"></mat-spinner></mat-icon>
+            </button>
+        </div>
+
+        
+        <button mat-raised-button (click)="gotoSb3()" color="primary">
+            <mat-icon>add</mat-icon>
+            <span>GOTO SB3</span>
+        </button>
+    </div>
+</div>

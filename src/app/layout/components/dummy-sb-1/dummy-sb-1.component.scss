@@ -1,0 +1,12 @@
+.root {
+    height: 100%;
+    width: 1200px;
+    overflow-x: hidden;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .root {
+      width: 95vw;
+    }
+}

@@ -1,0 +1,62 @@
+<div class="product-list rounded-lg shadow-2xl border border-solid border-gray-200">
+    <mat-progress-bar mode="indeterminate" *ngIf="isLoading"></mat-progress-bar>
+    <div class="flex flex-row justify-end items-center px-4 py-3">
+        <button
+            mat-raised-button color="primary"
+            (click)="createProduct()"
+        ><mat-icon>add</mat-icon> Create Product</button>
+    </div>
+
+    <div class="table-container">
+        <mat-table class="py-3" [dataSource]="productList">
+            
+            <!-- NAME column -->
+            <ng-container matColumnDef="name">
+                <mat-header-cell *matHeaderCellDef>{{'NAME' | uppercase}}</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.name}}</mat-cell>
+            </ng-container>
+            
+            <!-- MODEL column -->
+            <ng-container matColumnDef="model">
+                <mat-header-cell *matHeaderCellDef>{{'MODEL' | uppercase}}</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.model}}</mat-cell>
+            </ng-container>
+            
+            <!-- brand column -->
+            <ng-container matColumnDef="brand">
+                <mat-header-cell *matHeaderCellDef>{{'BRAND' | uppercase}}</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.brand}}</mat-cell>
+            </ng-container>
+            
+            <!-- PRICE column -->
+            <ng-container matColumnDef="price">
+                <mat-header-cell *matHeaderCellDef>{{'PRICE' | uppercase}}</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.price}}</mat-cell>
+            </ng-container>
+            
+            <!-- LOT NO column -->
+            <ng-container matColumnDef="lotNo">
+                <mat-header-cell *matHeaderCellDef>{{'LOT NO' | uppercase}}</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.lotNo}}</mat-cell>
+            </ng-container>
+            
+            <!-- Action column -->
+            <ng-container matColumnDef="action" stickyEnd>
+                <mat-header-cell *matHeaderCellDef>{{'Action' | uppercase}}</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                    <button mat-icon-button (click)="gotoEdit(element)">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button mat-icon-button (click)="confirmDelete(element)" >
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </mat-cell>
+            </ng-container>
+        
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        
+            <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+        
+        </mat-table>
+    </div>
+</div>

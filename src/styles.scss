@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* You can add global styles to this file, and also import other style files */
+
+////@import './assets/theme/theme';
+
+// Include the base styles for Angular Material core. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+//// @include mat-core();
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component that you are using.
+//// @include angular-material-theme($app-theme);
+
+// body {
+//   margin: 0;
+//   height: 100vh;
+//   font-family: Roboto, Arial, sans-serif;
+//   font-size: 16px;
+//   color: #292a1d;
+// }
+// a {
+//   text-decoration-color: mat-color($app-primary);
+//   color: mat-color($app-primary);
+// }
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+
+/* material table design fixes */
+.mat-mdc-table {
+  border-collapse: collapse;
+  width: 100%;
+  overflow: auto;
+  display: table;
+  box-sizing: border-box;
+}
+
+.mat-mdc-table .mat-mdc-header-cell {
+  @apply px-1.5 self-stretch break-words;
+}
+
+.mat-mdc-table .mat-mdc-cell {
+  @apply px-1.5 self-stretch break-words break-all py-1 text-gray-500;
+
+}
+
+.mat-mdc-table .mat-mdc-cell p.link-text {
+  @apply text-blue-600 overflow-hidden text-ellipsis whitespace-nowrap cursor-pointer break-all whitespace-normal;
+}
+
+.mat-mdc-table .mat-mdc-header-cell {
+  @apply text-gray-600 text-xs align-middle;
+}
+
+.mat-mdc-table .mat-mdc-header-cell:first-of-type,
+.mat-mdc-table .mat-mdc-cell:first-of-type,
+.mat-mdc-table .mat-mdc-cell:last-of-type {
+  @apply px-1.5;
+}
+
+.mat-mdc-row:hover {
+  @apply bg-slate-100;
+}
+
+.mat-row:hover .mat-mdc-cell.mat-table-sticky {
+  background: inherit;
+}
+
+/* material table design fixes */
+
+
+/* scroller style */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    visibility: hidden;
+  }
+  
+  *:hover::-webkit-scrollbar {
+    visibility: visible;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f6f9fa;
+    visibility: hidden;
+    border-radius: 8px;
+  }
+  
+  *:hover::-webkit-scrollbar-track {
+    visibility: visible;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #d9e3ef;
+    border-radius: 8px;
+    visibility: hidden;
+  }
+  
+  *:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+  }
+  
+  ::-webkit-scrollbar:hover {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #d9e3ef;
+  }
+  /* scroller style */
+  
+
+
+  /* Compact form field */
+  .mat-mdc-form-field.compact-field {
+    .mat-mdc-form-field-subscript-wrapper {
+      margin-bottom: 6px;
+      height: 0;
+    }
+
+    &.margin-bottom-none {
+        .mat-mdc-form-field-subscript-wrapper {
+            margin-bottom: 0;
+        }
+    }
+  }
+  /* Compact form field */

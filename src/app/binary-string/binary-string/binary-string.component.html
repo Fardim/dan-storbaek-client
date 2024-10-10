@@ -1,0 +1,26 @@
+<div class="p-4">
+    <div class="w-1/4 flex flex-row justify-start items-center gap-x-4">
+        <mat-form-field appearance="outline" class="w-full compact-field margin-bottom-none">
+            <mat-label>Binary string</mat-label>
+            <input matInput type="text" placeholder="Binary string" [(ngModel)]="binaryString" />
+        </mat-form-field>
+    
+        <button mat-raised-button type="button" color="primary" (click)="submit()">
+            Submit
+        </button>
+    </div>
+
+    <div class="mt-4">
+        <p class="flex flex-row justify-start items-center">
+            <mat-icon *ngIf="binaryStringStatus.equalZeroAndOne">check</mat-icon>
+            <mat-icon *ngIf="!binaryStringStatus.equalZeroAndOne">close</mat-icon>
+            <span>Equal number of 0's and 1's</span>
+        </p>
+        <p class="flex flex-row justify-start items-center">
+            <mat-icon *ngIf="binaryStringStatus.prefixOneGtOrEqualZero">check</mat-icon>
+            <mat-icon *ngIf="!binaryStringStatus.prefixOneGtOrEqualZero">close</mat-icon>
+            <span>For every prefix, the number of 1's is not less than the number of 0's</span>
+        </p>
+    </div>
+</div>
+

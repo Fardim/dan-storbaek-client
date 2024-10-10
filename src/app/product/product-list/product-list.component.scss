@@ -1,0 +1,19 @@
+.product-list {
+    height: 100%;
+    overflow-y: auto;
+
+    .table-container {
+        overflow-x: scroll;
+
+        .mat-mdc-table {
+            .mat-mdc-header-row, .mat-mdc-footer-row, .mat-mdc-row {
+                min-width: 1280px;
+            }
+    
+            .mat-mdc-cell,
+            .mat-mdc-header-cell {
+                @apply w-20 min-w-20 box-border;
+            }
+        }
+    }
+}

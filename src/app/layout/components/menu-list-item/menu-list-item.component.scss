@@ -1,0 +1,30 @@
+// @import '../../../../assets/theme/theme';
+
+:host {
+    display: flex;
+    flex-direction: column;
+    outline: none;
+    width: 100%;
+
+    .mat-mdc-list-item.active {
+        background-color: mat-color(white, 50);
+    }
+
+    &:hover,
+    &:focus {
+        >.mat-mdc-list-item:not(.expanded) {
+            background-color: mat-color(white, 100) !important;
+        }
+    }
+}
+
+.mat-mdc-list-item {
+    padding: 8px 0;
+    display: flex;
+    width: auto;
+    height: auto;
+
+    .routeIcon {
+        margin-right: 40px;
+    }
+}
